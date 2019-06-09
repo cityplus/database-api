@@ -4,7 +4,7 @@
 
 'use strict';
 
-const mdl = require('../../src/shared/cloudant.js');
+const mdl = require('../../src/shared/db.cloudant.js/index.js');
 
 describe("cloudant", () => {
 
