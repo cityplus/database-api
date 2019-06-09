@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "City+ Database Abstraction API (DB API)",
+  "main": "index.js",
   "scripts": {
     "build": "./node_modules/.bin/gulp build",
     "coverage": "./node_modules/.bin/nyc --exclude tests/ npm run test",
