@@ -1,0 +1,20 @@
+{
+  "name": "@cityplus/database-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "City+ Database Abstraction API (DB API)",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:cityplus/database-api.git"
+  },
+  "keywords": [],
+  "author": "Robust Choice, Inc",
+  "license": "ISC",
+  "dependencies": {
+    "@cloudant/cloudant": "^4.1.0",
+    "env-var": "^4.0.1"
+  }
+}
