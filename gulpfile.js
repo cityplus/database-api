@@ -12,6 +12,7 @@ const path = require('path');
 const Async = require('async');
 const copy = require('copy');
 const fs = require('fs');
+const rmDir = require('rimraf');
 
 const defaultPaths = {
     'src/models/**/*': 'src/models',
@@ -40,6 +41,9 @@ gulp.task('build', (done) => {
 
     Async.series(
         [
+            // clear current dist folder if exists
+            cb => rmDir(outputDir, cb),
+
             // make /dist
             cb => mkdirp(outputDir, (err) => cb(err)),
 
@@ -89,15 +93,17 @@ gulp.task('build', (done) => {
                         // copy function template file
                         cb => fs.copyFile('./templates/function-template.js', targetFile, cb),
 
+                        // copy index file
                         cb => {
 
                             try {
 
+                                // calculate relative path
+                                const relativeFunctionPath = path.join(functionPath).split('\\').join('/');
+
                                 let content = fs.readFileSync(targetFile).toString();
 
-                                content = content.replace('__PATH_TO_MODULE__', functionPath);
-
-                                content = content.split('\\').join('\\\\');
+                                content = content.replace('__PATH_TO_MODULE__', relativeFunctionPath);
 
                                 fs.writeFileSync(targetFile, content);
 
