@@ -4,6 +4,7 @@
   "private": true,
   "description": "City+ Database Abstraction API (DB API)",
   "scripts": {
+    "build": "./node_modules/.bin/gulp build",
     "coverage": "./node_modules/.bin/nyc --exclude tests/ npm run test",
     "test": "./node_modules/.bin/mocha tests/index"
   },
@@ -28,6 +29,7 @@
     "mkdirp": "^0.5.1",
     "mocha": "^6.1.4",
     "nyc": "^14.1.1",
-    "sinon": "^7.3.2"
+    "sinon": "^7.3.2",
+    "yargs": "^13.2.4"
   }
 }
