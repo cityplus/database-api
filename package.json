@@ -4,7 +4,7 @@
   "private": true,
   "description": "City+ Database Abstraction API (DB API)",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": ""
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,10 @@
   "dependencies": {
     "@cloudant/cloudant": "^4.1.0",
     "env-var": "^4.0.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "dotenv": "^8.0.0",
+    "mocha": "^6.1.4"
   }
 }
