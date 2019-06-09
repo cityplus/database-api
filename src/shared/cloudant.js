@@ -15,7 +15,8 @@ module.exports.connect = async () => {
 
         Cloudant(
             {
-                account: env("CITYPLUS_DB_CLOUDANT_ACCOUNT").required().asString(),
+                url: env("CITYPLUS_DB_CLOUDANT_URL").required().asUrlString(),
+                account: env("CITYPLUS_DB_CLOUDANT_USERNAME").required().asString(),
                 password: env("CITYPLUS_DB_CLOUDANT_PASSWORD").required().asString()
             },
             (err, client) => {

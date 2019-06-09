@@ -4,7 +4,8 @@
   "private": true,
   "description": "City+ Database Abstraction API (DB API)",
   "scripts": {
-    "test": ""
+    "coverage": "./node_modules/.bin/nyc --exclude tests/ npm run test",
+    "test": "./node_modules/.bin/mocha tests/index"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,11 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
+    "copy": "^0.3.2",
     "dotenv": "^8.0.0",
-    "mocha": "^6.1.4"
+    "gulp": "^4.0.2",
+    "mkdirp": "^0.5.1",
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1"
   }
 }
